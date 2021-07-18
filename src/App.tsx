@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Attribution from "./components/Attribution";
 import Button, { buttonElement } from "./components/Button";
 import logo from "./images/logo.svg";
 
@@ -75,7 +76,7 @@ function App() {
 					<img src={logo} alt="logo" />
 				</div>
 			</header>
-			<main>
+			<main role="main">
 				<div className="container">
 					<div className="main">
 						<div className="main__column main__info">
@@ -182,6 +183,12 @@ function App() {
 					</div>
 				</div>
 			</main>
+			<footer role="contentinfo">
+				<Attribution
+					name="Thomas Jonstrup"
+					url="https://github.com/thomasjonstrup"
+				/>
+			</footer>
 		</div>
 	);
 }
