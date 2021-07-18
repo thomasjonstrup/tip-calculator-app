@@ -1,0 +1,110 @@
+/// Button component
+
+.btn {
+	display: inline-flex;
+	border-radius: 0.4rem;
+	padding: 1.2rem 1rem;
+	outline: none;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+	transition: all 0.23s ease-in-out;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 1.8rem;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+
+	@include modifier("outline") {
+		background-color: transparent;
+		border: 1px solid #fff;
+	}
+
+	// Buttons sizes
+	@include modifier("small") {
+		font-size: 1rem;
+	}
+	@include modifier("large") {
+		font-size: 1.6rem;
+	}
+
+	@include modifier("bordered-primary") {
+		background: #fff;
+		border: 1px solid #496ee8;
+		color: #496ee8;
+	}
+
+	@include modifier("primary") {
+		background-color: $primary-color;
+		color: $very-dark-cyan;
+
+		&:hover {
+			background-color: $light-grayish-cyan;
+		}
+	}
+
+	&--active {
+		background-color: $light-grayish-cyan !important;
+		color: $very-dark-cyan !important;
+	}
+
+	@include modifier("secondary") {
+		background-color: $very-dark-cyan;
+		color: $white;
+
+		&:hover {
+			background-color: $light-grayish-cyan;
+			color: $very-dark-cyan;
+		}
+	}
+}
+
+.icon {
+	position: absolute;
+	left: 1.6rem;
+
+	&--dollar {
+		background-image: url("../images/icon-dollar.svg");
+		width: 1.3rem;
+		height: 1.6rem;
+		background-repeat: no-repeat;
+	}
+	&--person {
+		background-image: url("../images/icon-person.svg");
+		width: 1.3rem;
+		height: 1.6rem;
+		background-repeat: no-repeat;
+	}
+}
+
+.input {
+	width: 100%;
+	position: relative;
+
+	&__group {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	input {
+		width: 100%;
+		padding: 0.5rem 1rem;
+		border-radius: 0.8rem;
+		font-size: 2.4rem;
+		font-weight: 700;
+		text-align: end;
+		color: $very-dark-cyan;
+		outline: none;
+		height: 100%;
+		background-color: $light-grayish-cyan2;
+		border: 2px solid transparent;
+
+		&:focus {
+			border-color: $primary-color;
+		}
+	}
+}

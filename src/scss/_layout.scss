@@ -1,0 +1,121 @@
+@use "sass:math" as math;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* h1 {
+	line-height: 3.5rem;
+} */
+
+// Flexbox display
+@mixin flexbox {
+	display: flex;
+}
+
+.app {
+	display: flex;
+	justify-content: flex-end;
+	/* 	align-items: center; */
+	flex-direction: column;
+	min-height: 100vh;
+
+	@include breakpoint-up(medium) {
+		justify-content: center;
+	}
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+
+	&__logo {
+		height: auto;
+		width: 10rem;
+		max-width: 20rem;
+	}
+}
+
+.form {
+	&__group {
+		margin-bottom: 2rem;
+	}
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	background: white;
+	padding: 3em 2.5em 2.5em;
+	border-radius: 1.75rem 1.75rem 0 0;
+
+	@include breakpoint-up(medium) {
+		border-radius: 1.75rem;
+	}
+
+	&__title {
+		color: $light-grayish-cyan2;
+		font-size: 1.8rem;
+		font-weight: 700;
+	}
+
+	&__price {
+		font-size: 4rem;
+		font-weight: 700;
+		color: $primary-color;
+	}
+
+	&__column {
+		@include breakpoint-up(medium) {
+			display: flex;
+			flex-direction: column;
+			width: 50%;
+			justify-content: flex-start;
+			padding: 2.5rem;
+		}
+	}
+
+	&__reset {
+		margin-top: auto;
+	}
+
+	@include breakpoint-up(medium) {
+		flex-direction: row;
+	}
+
+	&__inner {
+		border-radius: 1rem;
+		background-color: $very-dark-cyan;
+		padding: 3em 2.5em 2.5em;
+	}
+}
+
+.mb-2 {
+	margin-bottom: 2.5rem;
+}
+
+.row {
+	flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.grid {
+	display: grid;
+	/* grid-template-rows / grid-template-columns values */
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 1rem;
+
+	@include breakpoint-up(medium) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+}
